@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutPageHome.cshtml";
+}
+
+<h2>CANSU HOME</h2>
+
+<!-- Modelden gelen verileri döngü ile yazdırma -->
+
+@foreach (var item in Model)
+{
+    <div class="card float-start m-2" style="width: 18rem;">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">@item.UrunAdi</li>
+            <li class="list-group-item">@item.Adet</li>
+            <li class="list-group-item">@item.Fiyat</li>
+        </ul>
+    </div>
+
+}
+
+
+

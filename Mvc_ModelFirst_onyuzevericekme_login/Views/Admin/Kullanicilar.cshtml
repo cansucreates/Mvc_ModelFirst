@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Mvc_ModelFirst_onyuzevericekme_login.Models.Kullanicilar>
+
+@{
+    ViewBag.Title = "Kullanicilar";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<h2>Kullanicilar</h2>
+
+<p>
+    @Html.ActionLink("Yeni Kişi", "Kaydet")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KullaniciAdi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Sifre)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.KullaniciAdi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Sifre)
+        </td>
+        <td>
+            @Html.ActionLink("Guncelle", "Guncelle", new { id=item.id }) |
+            @Html.ActionLink("Sil", "Sil", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
